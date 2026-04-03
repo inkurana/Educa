@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<quizzes>
+    <quiz id="q1">
+        <question>What does CSS stand for in web development?</question>
+        <options>
+            <option correct="false">Computer Style Sheets</option>
+            <option correct="true">Cascading Style Sheets</option>
+            <option correct="false">Creative Style System</option>
+        </options>
+    </quiz>
+    <quiz id="q2">
+        <question>Which file format are we currently using to store these questions?</question>
+        <options>
+            <option correct="false">JSON</option>
+            <option correct="false">SQL</option>
+            <option correct="true">XML</option>
+        </options>
+    </quiz>
+</quizzes>

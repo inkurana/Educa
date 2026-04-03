@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Educa | Stellar Vibe</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+
+<body class="light-mode">
+
+    <nav class="top-navbar">
+        <div class="nav-brand-top" style="display: flex; align-items: center; gap: 15px;">
+            <button id="sidebar-toggle" class="icon-btn">
+                <i class="ph ph-list"></i>
+            </button>
+            <h2 style="cursor: pointer;" onclick="loadContent('home')">Edu<span class="dot">.</span></h2>
+        </div>
+        
+        <ul class="top-nav-menu">
+            <li><a href="javascript:void(0)" onclick="loadContent('courses')">Courses</a></li>
+            <li><a href="javascript:void(0)" onclick="loadContent('quizzes')">Quiz</a></li>
+            <li><a href="javascript:void(0)" onclick="loadContent('teachers')">Teachers</a></li>
+            <li><a href="javascript:void(0)" onclick="loadContent('about')">About</a></li>
+            <li><a href="javascript:void(0)" onclick="loadContent('contact')">Contact</a></li>
+        </ul>
+        <div class="top-nav-auth">
+            <button id="theme-toggle" class="theme-btn" onclick="toggleTheme()">
+                <i class="ph ph-sun"></i> 
+            </button>
+            
+            <a href="login.html" class="sign-in-link">Sign in</a>
+            <a href="pricing.html" class="join-btn">Join</a>
+            
+        </div>
+    </nav>
+
+    <div class="app-container">
+        <nav class="sidebar collapsed" id="app-sidebar" onmouseenter="openSidebar()" onmouseleave="closeSidebar()">
+            <div class="brand">
+                <div class="logo-icon"><i class="ph ph-planet"></i></div>
+                <h2 class="link-text">Workspace</h2>
+            </div>
+            
+            <ul class="nav-links">
+                <p class="nav-label">OVERVIEW</p>
+                <li><button class="active" onclick="loadContent('dashboard')"><i class="ph ph-squares-four"></i> <span class="link-text">Dashboard</span></button></li>
+                <li><button onclick="loadContent('lesson1')"><i class="ph ph-book-bookmark"></i> <span class="link-text">My Courses</span></button></li>
+                
+                <p class="nav-label mt-2">PRACTICE</p>
+                <li><button class="quiz-btn" onclick="loadContent('quizzes')"><i class="ph ph-lightning"></i> <span class="link-text">Subject Quizzes</span></button></li>
+            </ul>
+        </nav>
+
+        <main class="content-area">
+           <header class="top-nav">
+                <div class="breadcrumb">Overview / <span id="current-page-title">Dashboard</span></div>
+                
+                <div class="location-chip" style="display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); margin-left: auto; margin-right: 20px;">
+                    <i class="ph ph-map-pin" style="color: #4ade80;"></i>
+                    <span id="user-location">Detecting...</span>
+                </div>
+
+                <div class="user-chip">
+                    <span>Inkunika Rana</span>
+                    <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul" alt="User">
+                </div>
+            </header>
+            
+            <div id="dynamic-content" class="fade-in">
+                </div>
+        </main>
+    </div>
+
+    <script src="js/app.js"></script>
+    <script src="js/quiz-engine.js"></script> 
+    
+    <script>
+        // Load Home Page automatically
+        window.onload = () => loadContent('home');
+    </script>
+</body>
+</html>
